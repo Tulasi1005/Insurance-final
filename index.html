@@ -12,37 +12,151 @@
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="./style.css">
     <style>
-        /* Banner/Slider Styles */
-        .slider-section {
+        /* Premium Carousel Styles */
+        .carousel-wrapper {
             position: relative;
-            height: 500px;
-            background-color: var(--primary-color);
+            width: 100%;
+            height: 600px;
             overflow: hidden;
+            background-color: var(--primary-color);
+        }
+
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
             display: flex;
             align-items: center;
             justify-content: center;
+            z-index: 1;
         }
-        .slide-content {
+
+        .carousel-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(56, 71, 87, 0.295) 0%, rgba(19, 40, 63, 0.75) 100%);
+            z-index: 2;
+        }
+
+        .carousel-slide.active {
+            opacity: 1;
+            visibility: visible;
+            z-index: 2;
+        }
+
+        .carousel-content {
+            position: relative;
+            z-index: 3;
+            max-width: 850px;
+            padding: 0 40px;
             text-align: center;
-            color: white;
-            z-index: 5;
-            max-width: 800px;
-            padding: 0 20px;
+            transform: translateY(20px);
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
+            opacity: 0;
         }
-        .slide-content h2 {
-            font-size: 3rem;
-            font-weight: 800;
+
+        .carousel-slide.active .carousel-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .carousel-content h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
             color: var(--secondary-color);
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             font-family: 'Outfit', sans-serif;
-            letter-spacing: 2px;
+            letter-spacing: 4px;
             text-transform: uppercase;
         }
-        .slide-content p {
+
+        .carousel-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 20px;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .carousel-content p {
             font-size: 1.25rem;
             margin-bottom: 30px;
             line-height: 1.6;
             opacity: 0.9;
+            color: white;
+        }
+
+        /* Nav Controls */
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(19, 40, 63, 0.5);
+            border: 1px solid var(--border-color);
+            color: #fff;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 10;
+            outline: none;
+        }
+
+        .carousel-btn:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            border-color: var(--secondary-color);
+        }
+
+        .carousel-btn.prev {
+            left: 24px;
+        }
+
+        .carousel-btn.next {
+            right: 24px;
+        }
+
+        /* Dot Indicators */
+        .carousel-dots {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 10;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .carousel-dot.active {
+            background-color: var(--secondary-color);
+            transform: scale(1.2);
+            border-color: var(--secondary-color);
         }
 
         /* Announcement Alert Bar */
@@ -65,22 +179,25 @@
             gap: 8px;
         }
 
-        /* Hero / Slider Mobile Responsiveness */
+        /* Responsive adjustments */
         @media (max-width: 768px) {
-            .slider-section {
-                height: 400px;
+            .carousel-wrapper {
+                height: 450px;
             }
-            .slide-content h2 {
-                font-size: 1rem !important;
-                letter-spacing: 2px !important;
-            }
-            .slide-content h1 {
+            .carousel-content h1 {
                 font-size: 2.2rem !important;
                 margin-bottom: 12px !important;
             }
-            .slide-content p {
+            .carousel-content h2 {
+                font-size: 1rem !important;
+                letter-spacing: 2px !important;
+            }
+            .carousel-content p {
                 font-size: 0.95rem !important;
                 margin-bottom: 20px !important;
+            }
+            .carousel-btn {
+                display: none;
             }
         }
 
@@ -149,18 +266,52 @@
 
     <!-- Announcement Alert Bar -->
     <div class="announcement-bar">
-        <a href="./contact-us.html"><i class="fas fa-bullhorn"></i> Click for a Quote!</a>
+        <a href="./contact-us.html"><i class="fas fa-bullhorn"></i> Click For Quote!</a>
     </div>
 
-    <!-- Hero / Slider Section -->
-    <section class="slider-section" style="background-image: linear-gradient(rgba(11,19,43,0.85), rgba(11,19,43,0.85)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80'); background-size: cover; background-position: center;">
-        <div class="slide-content">
-            <h2 style="font-size: 1.5rem; letter-spacing: 4px; color: var(--secondary-color); margin-bottom: 8px;">Vision • Integrity • Impact</h2>
-            <h1 style="font-size: 3.5rem; font-weight: 800; color: white; margin-bottom: 20px; font-family: 'Outfit', sans-serif;">QUINTERA HOLDINGS</h1>
-            <p>Providing professional insurance coverage, policy management, risk assessment, and commercial/residential real estate advisory services tailored to your needs.</p>
-            <a href="./contact-us.html" class="btn btn-secondary" style="padding: 14px 35px; font-size: 1rem; font-weight: 700;">Connect With Advisor</a>
+    <!-- Hero / Premium Carousel Section -->
+    <div class="carousel-wrapper">
+        <!-- Slide 1 -->
+        <div class="carousel-slide active" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80');">
+            <div class="carousel-content">
+                <h2 style="color: rgb(236, 236, 236);">Vision • Integrity • Impact</h2>
+                <h1>QUINTERA HOLDINGS</h1>
+                <p>Providing professional insurance coverage, policy management, risk assessment, and commercial/residential real estate advisory services tailored to your needs.</p>
+                <a href="./contact-us.html" class="btn btn-primary" style="padding: 14px 40px; font-weight: 700; margin-top: 10px;">Request Advisor Consultation</a>
+            </div>
         </div>
-    </section>
+
+        <!-- Slide 2 -->
+        <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80');">
+            <div class="carousel-content">
+                <h2 style="color: rgb(236, 236, 236);">Vision • Integrity • Impact</h2>
+                <h1>QUINTERA HOLDINGS</h1>
+                <p>Providing professional insurance coverage, policy management, risk assessment, and commercial/residential real estate advisory services tailored to your needs.</p>
+                <a href="./contact-us.html" class="btn btn-primary" style="padding: 14px 40px; font-weight: 700; margin-top: 10px;">Request Advisor Consultation</a>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80');">
+            <div class="carousel-content">
+                <h2 style="color: rgb(236, 236, 236);">Vision • Integrity • Impact</h2>
+                <h1>QUINTERA HOLDINGS</h1>
+                <p>Providing professional insurance coverage, policy management, risk assessment, and commercial/residential real estate advisory services tailored to your needs.</p>
+                <a href="./contact-us.html" class="btn btn-primary" style="padding: 14px 40px; font-weight: 700; margin-top: 10px;">Request Advisor Consultation</a>
+            </div>
+        </div>
+
+        <!-- Nav Buttons -->
+        <button class="carousel-btn prev" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></button>
+        <button class="carousel-btn next" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></button>
+
+        <!-- Dot Indicators -->
+        <div class="carousel-dots">
+            <div class="carousel-dot active"></div>
+            <div class="carousel-dot"></div>
+            <div class="carousel-dot"></div>
+        </div>
+    </div>
 
     <!-- Specific Corporate Contact Banner -->
     <section class="roadside-assistance-box">
@@ -172,7 +323,7 @@
                 <a href="tel:980-776-5292" class="roadside-btn-red">
                     <i class="fas fa-phone-alt"></i> CALL 980-776-5292
                 </a>
-                <a href="mailto:sales@quintera.us" class="roadside-btn-red">
+                <a href="mailto:tulasilaxmi.mandala@gmail.com" class="roadside-btn-red">
                     <i class="fas fa-envelope"></i> EMAIL ADVISOR
                 </a>
             </div>
@@ -280,5 +431,51 @@
 
     <!-- Layout Handler Script -->
     <script src="./layout.js"></script>
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll(".carousel-slide");
+        const dots = document.querySelectorAll(".carousel-dot");
+        let slideInterval;
+
+        function showSlide(index) {
+            if (index >= slides.length) currentSlide = 0;
+            else if (index < 0) currentSlide = slides.length - 1;
+            else currentSlide = index;
+
+            slides.forEach((slide, i) => {
+                if (i === currentSlide) {
+                    slide.classList.add("active");
+                    dots[i].classList.add("active");
+                } else {
+                    slide.classList.remove("active");
+                    dots[i].classList.remove("active");
+                }
+            });
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        function resetInterval() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+
+        // Bind events to dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener("click", () => {
+                showSlide(index);
+                resetInterval();
+            });
+        });
+
+        // Start autoplay
+        slideInterval = setInterval(nextSlide, 5000);
+    </script>
 </body>
 </html>
