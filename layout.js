@@ -97,9 +97,9 @@ function injectHeader() {
                     <li><a href="${getPath('index.html')}" class="nav-item ${getActive('index.html')}">Home</a></li>
                     <li><a href="${getPath('about-us.html')}" class="nav-item ${getActive('about-us.html')}">About Us</a></li>
                     <li><a href="${getPath('services.html')}" class="nav-item ${getActive('services.html')}">Services</a></li>
-                    <li><a href="${getPath('contact-us.html')}" class="nav-item ${getActive('contact-us.html')}">Forms</a></li>
+                    <li><a href="${getPath('contact-us.html')}" class="nav-item">Forms</a></li>
                     <li><a href="${getPath('contact-us.html')}" class="nav-item ${getActive('contact-us.html')}">Contact Us</a></li>
-                    <li><a href="${getPath('regional-partners.html')}" class="nav-item ${getActive('regional-partners.html')}">Partners</a></li>
+                    
                     <!-- Mobile Theme Toggle -->
                     <li class="mobile-theme-toggle-li" style="width: 100%; margin-top: 15px;">
                         <button id="mobile-theme-toggle-btn" style="background: var(--primary-light); border: 1px solid var(--border-color); color: var(--text-light); cursor: pointer; padding: 12px 20px; border-radius: 20px; font-size: 0.9rem; font-family: 'Outfit', sans-serif; font-weight: 700; display: flex; align-items: center; gap: 8px; margin: 0 auto; width: 100%; justify-content: center;" onclick="window.toggleTheme()">
