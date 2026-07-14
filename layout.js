@@ -79,10 +79,16 @@ function injectHeader() {
         <div class="top-header">
             <div class="container-fluid top-header-row">
                 <div class="top-links">
+<<<<<<< HEAD
                     <a href="tel:980-776-5292"><i class="fas fa-phone-alt" style="margin-right: 4px;"></i> 980-776-5292 <span style="background: linear-gradient(145deg, #b58b42, #d4af37); color: #0a0a0f; padding: 2px 10px; font-size: 0.65rem; font-weight: 800; border-radius: 3px; margin-left: 5px; letter-spacing: 0.5px;">Get Started</span></a>
                     <a href="#" id="header-live-chat-link"><i class="fas fa-comment-dots" style="margin-right: 4px;"></i> LIVE CHAT</a>
                     <a href="${getPath('contact-us.html')}"><i class="fas fa-file-invoice-dollar" style="margin-right: 4px;"></i> POLICY SERVICES</a>
                     <span style="color: var(--text-light); opacity: 0.5; font-size: 0.7rem; margin-left: 12px; font-weight: 600; letter-spacing: 2px; font-family: 'Playfair Display', Georgia, serif;">VISION | INTEGRITY | IMPACT</span>
+=======
+                    <a href="tel:980-776-5292"><i class="fas fa-phone-alt" style="margin-right: 4px;"></i> 980-776-5292 </a>
+                    <a href="#" id="header-live-chat-link"><i class="fas fa-comment-dots" style="margin-right: 4px;"></i> LIVE CHAT</a>
+                    <a href="${getPath('services.html')}"><i class="fas fa-file-invoice-dollar" style="margin-right: 4px;"></i> POLICY SERVICES</a>
+>>>>>>> 69fc383078060a49b3bfa370f434dd3115446dd3
                 </div>
                 <div class="social-links" style="display: flex; align-items: center; gap: 10px;">
                     <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -116,9 +122,9 @@ function injectHeader() {
                     <li><a href="${getPath('index.html')}" class="nav-item ${getActive('index.html')}">Home</a></li>
                     <li><a href="${getPath('about-us.html')}" class="nav-item ${getActive('about-us.html')}">About Us</a></li>
                     <li><a href="${getPath('services.html')}" class="nav-item ${getActive('services.html')}">Services</a></li>
-                    <li><a href="${getPath('contact-us.html')}" class="nav-item ${getActive('contact-us.html')}">Forms</a></li>
+                    <li><a href="${getPath('contact-us.html')}" class="nav-item">Forms</a></li>
                     <li><a href="${getPath('contact-us.html')}" class="nav-item ${getActive('contact-us.html')}">Contact Us</a></li>
-                    <li><a href="${getPath('regional-partners.html')}" class="nav-item ${getActive('regional-partners.html')}">Partners</a></li>
+                    
                     <!-- Mobile Theme Toggle -->
                     <li class="mobile-theme-toggle-li" style="width: 100%; margin-top: 15px;">
                         <button id="mobile-theme-toggle-btn" style="background: var(--primary-light); border: 1px solid var(--border-color); color: var(--text-light); cursor: pointer; padding: 12px 20px; border-radius: 20px; font-size: 0.9rem; font-family: 'Outfit', sans-serif; font-weight: 700; display: flex; align-items: center; gap: 8px; margin: 0 auto; width: 100%; justify-content: center;" onclick="window.toggleTheme()">
@@ -148,11 +154,18 @@ function injectFooter() {
                 <div class="footer-col">
                     <h4 style="color: rgba(181, 139, 66, 0.8); letter-spacing: 2px; font-family: 'Outfit', sans-serif;">QUICK LINKS</h4>
                     <ul>
+<<<<<<< HEAD
                         <li><a href="${getPath('about-us.html')}" style="font-family: 'Outfit', sans-serif;">About Us</a></li>
                         <li><a href="${getPath('contact-us.html')}" style="font-family: 'Outfit', sans-serif;">Contact Us</a></li>
                         <li><a href="${getPath('claims.html')}" style="font-family: 'Outfit', sans-serif;">Claims Help</a></li>
                         <li><a href="${getPath('contact-us.html')}" style="font-family: 'Outfit', sans-serif;">Ask Us Anything</a></li>
                         <li><a href="${getPath('contact-us.html')}" style="font-family: 'Outfit', sans-serif;">Advisor Resource Center</a></li>
+=======
+                        <li><a href="${getPath('about-us.html')}">About Us</a></li>
+                        <li><a href="${getPath('contact-us.html')}">Contact Us</a></li>
+                        <li><a href="${getPath('contact-us.html')}">Ask Us Anything</a></li>
+                        <li><a href="${getPath('contact-us.html')}">Advisor Resource Center</a></li>
+>>>>>>> 69fc383078060a49b3bfa370f434dd3115446dd3
                     </ul>
                 </div>
 
@@ -197,8 +210,13 @@ function injectCookieBanner() {
         <h4 style="margin-bottom: 8px; color: rgba(181, 139, 66, 0.9); font-family: 'Playfair Display', Georgia, serif;"><i class="fas fa-cookie-bite" style="color: #b58b42;"></i> Cookie Consent</h4>
         <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 12px; font-family: 'Outfit', sans-serif;">We use cookies to improve your experience on our site. By using our site, you consent to cookies. Please read our Cookie Policy.</p>
         <div class="cookie-actions">
+<<<<<<< HEAD
             <button class="btn btn-outline btn-sm" id="cookie-settings-btn" onclick="alert('Cookie Settings details (Dummy).')" style="font-family: 'Outfit', sans-serif;">Preferences</button>
             <button class="btn btn-primary btn-sm" id="cookie-accept-btn" style="background: linear-gradient(145deg, #b58b42, #d4af37); border: none; color: #0a0a0f; font-weight: 700; font-family: 'Outfit', sans-serif;">Accept All</button>
+=======
+           
+            <button class="btn btn-primary btn-sm" id="cookie-accept-btn">Accept All</button>
+>>>>>>> 69fc383078060a49b3bfa370f434dd3115446dd3
         </div>
     `;
 
