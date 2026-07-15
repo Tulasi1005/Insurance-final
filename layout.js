@@ -28,10 +28,10 @@ const starLogoSVG = `
     <span class="brand-wordmark">QUINTERA</span>
     <span class="brand-submark">HOLDINGS</span>
     <span class="brand-divider"></span>
-    <span class="brand-tagline">Vision | Integrity | Impact</span>
   </div>
 </div>
 `;
+
 
 // Footer Logo: Quintera Holdings with Transparent Logo
 const starFooterLogo1 = `
@@ -39,20 +39,9 @@ const starFooterLogo1 = `
   <div style="position: absolute; top: -30%; right: -20%; width: 100px; height: 100px; background: radial-gradient(circle, rgba(181, 139, 66, 0.03) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
   <div style="position: absolute; bottom: -20%; left: -20%; width: 80px; height: 80px; background: radial-gradient(circle, rgba(212, 175, 55, 0.02) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
   
-  <img src="${getPath('Quintera Transparent.png')}" alt="Quintera Holdings" style="height: 60px; width: auto; margin-bottom: 8px; filter: drop-shadow(0 4px 12px rgba(181, 139, 66, 0.2));">
+  <img src="${getPath('logo-fin.png')}" alt="Quintera Holdings" style="height: 100px; width: auto; margin-bottom: 8px; filter: drop-shadow(0 4px 12px rgba(181, 139, 66, 0.2));">
   
-  <div style="font-weight: 900; font-size: 1.4rem; color: #ffffff; font-family: 'Playfair Display', Georgia, 'Times New Roman', serif; letter-spacing: 4px; background: linear-gradient(180deg, #ffffff 30%, #b8b8c8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">QUINTERA</div>
-  <div style="font-size: 0.6rem; color: rgba(181, 139, 66, 0.6); font-weight: 400; letter-spacing: 8px; text-transform: uppercase; margin-top: 2px; -webkit-text-fill-color: rgba(181, 139, 66, 0.6); font-family: 'Outfit', sans-serif;">HOLDINGS</div>
   
-  <div style="width: 40px; height: 2px; background: linear-gradient(90deg, transparent, rgba(181, 139, 66, 0.3), transparent); margin: 12px auto;"></div>
-  
-  <div style="display: flex; justify-content: center; gap: 14px; font-size: 0.7rem; font-weight: 600; letter-spacing: 2.5px; color: rgba(255, 255, 255, 0.4); text-transform: uppercase; flex-wrap: wrap; font-family: 'Playfair Display', Georgia, serif;">
-    <span>VISION</span>
-    <span style="color: rgba(181, 139, 66, 0.3);">|</span>
-    <span>INTEGRITY</span>
-    <span style="color: rgba(181, 139, 66, 0.3);">|</span>
-    <span>IMPACT</span>
-  </div>
 </div>
 `;
 
@@ -79,16 +68,9 @@ function injectHeader() {
         <div class="top-header">
             <div class="container-fluid top-header-row">
                 <div class="top-links">
-<<<<<<< HEAD
-                    <a href="tel:980-776-5292"><i class="fas fa-phone-alt" style="margin-right: 4px;"></i> 980-776-5292 <span style="background: linear-gradient(145deg, #b58b42, #d4af37); color: #0a0a0f; padding: 2px 10px; font-size: 0.65rem; font-weight: 800; border-radius: 3px; margin-left: 5px; letter-spacing: 0.5px;">Get Started</span></a>
-                    <a href="#" id="header-live-chat-link"><i class="fas fa-comment-dots" style="margin-right: 4px;"></i> LIVE CHAT</a>
-                    <a href="${getPath('contact-us.html')}"><i class="fas fa-file-invoice-dollar" style="margin-right: 4px;"></i> POLICY SERVICES</a>
-                    <span style="color: var(--text-light); opacity: 0.5; font-size: 0.7rem; margin-left: 12px; font-weight: 600; letter-spacing: 2px; font-family: 'Playfair Display', Georgia, serif;">VISION | INTEGRITY | IMPACT</span>
-=======
-                    <a href="tel:980-776-5292"><i class="fas fa-phone-alt" style="margin-right: 4px;"></i> 980-776-5292 </a>
+                    <a href="tel:980-776-5292"><i class="fas fa-phone-alt" style="margin-right: 4px;"></i> 980-776-5292</a>
                     <a href="#" id="header-live-chat-link"><i class="fas fa-comment-dots" style="margin-right: 4px;"></i> LIVE CHAT</a>
                     <a href="${getPath('services.html')}"><i class="fas fa-file-invoice-dollar" style="margin-right: 4px;"></i> POLICY SERVICES</a>
->>>>>>> 69fc383078060a49b3bfa370f434dd3115446dd3
                 </div>
                 <div class="social-links" style="display: flex; align-items: center; gap: 10px;">
                     <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -121,8 +103,52 @@ function injectHeader() {
                 <ul class="nav-links" id="nav-menu">
                     <li><a href="${getPath('index.html')}" class="nav-item ${getActive('index.html')}">Home</a></li>
                     <li><a href="${getPath('about-us.html')}" class="nav-item ${getActive('about-us.html')}">About Us</a></li>
-                    <li><a href="${getPath('services.html')}" class="nav-item ${getActive('services.html')}">Services</a></li>
-                    <li><a href="${getPath('contact-us.html')}" class="nav-item">Forms</a></li>
+                    <li class="dropdown megamenu">
+                        <a href="${getPath('services.html')}" class="nav-item ${getActive('services.html')}">Services <i class="fas fa-chevron-down" style="font-size: 0.75rem; margin-left: 4px; vertical-align: middle;"></i></a>
+                        <div class="megamenu-panel">
+                            <!-- Col 1: Insurance Coverage -->
+                            <div class="megamenu-col">
+                                <h4>Insurance Coverage</h4>
+                                <div class="megamenu-img">
+                                    <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=400&q=80" alt="Insurance Coverage">
+                                </div>
+                                <ul>
+                                    <li><a href="${getPath('services.html?filter=insurance')}"><i class="fas fa-chevron-right"></i> Personal Lines Coverage</a></li>
+                                    <li><a href="${getPath('services.html?filter=insurance')}"><i class="fas fa-chevron-right"></i> Commercial Coverage</a></li>
+                                </ul>
+                            </div>
+                            <!-- Col 2: Real Estate Services -->
+                            <div class="megamenu-col">
+                                <h4>Real Estate Services <span class="badge-red">specialist</span></h4>
+                                <div class="megamenu-img">
+                                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=400&q=80" alt="Real Estate Services">
+                                </div>
+                                <ul>
+                                    <li><a href="${getPath('services.html?filter=realestate')}"><i class="fas fa-chevron-right"></i> Residential Sales & Purchase</a></li>
+                                    <li><a href="${getPath('services.html?filter=realestate')}"><i class="fas fa-chevron-right"></i> Commercial Property Brokerage</a></li>
+                                    <li><a href="${getPath('services.html?filter=realestate')}"><i class="fas fa-chevron-right"></i> Leasing & Tenant Negotiations</a></li>
+                                </ul>
+                            </div>
+                            <!-- Col 3: Advisory & Policy Management -->
+                            <div class="megamenu-col">
+                                <h4>Advisory & Policy</h4>
+                                <div class="megamenu-img">
+                                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80" alt="Advisory & Policy">
+                                </div>
+                                <ul>
+                                    <li><a href="${getPath('services.html?filter=advisory')}"><i class="fas fa-chevron-right"></i> Policy Management</a></li>
+                                    <li><a href="${getPath('services.html?filter=advisory')}"><i class="fas fa-chevron-right"></i> Risk Assessment</a></li>
+                                </ul>
+                            </div>
+                            <!-- Col 4: Callout -->
+                            <div class="megamenu-col-callout">
+                                <h3>Reasonable and Reliable Coverage.</h3>
+                                <p>Reasonable and reliable coverage, Quintera Holdings has an insurance package based on your needs! In a rush? Secure coverage with us in as little as 10 minutes.</p>
+                                <a href="${getPath('contact-us.html')}" class="megamenu-btn" style="color: white; text-decoration: none; display: block; text-align: center;">QUINTERA HOLDINGS</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="${getPath('contact-us.html')}" class="nav-item ${getActive('contact-us.html')}">Forms</a></li>
                     <li><a href="${getPath('contact-us.html')}" class="nav-item ${getActive('contact-us.html')}">Contact Us</a></li>
                     
                     <!-- Mobile Theme Toggle -->
@@ -140,6 +166,8 @@ function injectHeader() {
     headerPlaceholder.outerHTML = headerHTML;
 }
 
+
+
 function injectFooter() {
     const footerPlaceholder = document.getElementById("footer-placeholder");
     if (!footerPlaceholder) return;
@@ -154,18 +182,10 @@ function injectFooter() {
                 <div class="footer-col">
                     <h4 style="color: rgba(181, 139, 66, 0.8); letter-spacing: 2px; font-family: 'Outfit', sans-serif;">QUICK LINKS</h4>
                     <ul>
-<<<<<<< HEAD
                         <li><a href="${getPath('about-us.html')}" style="font-family: 'Outfit', sans-serif;">About Us</a></li>
                         <li><a href="${getPath('contact-us.html')}" style="font-family: 'Outfit', sans-serif;">Contact Us</a></li>
-                        <li><a href="${getPath('claims.html')}" style="font-family: 'Outfit', sans-serif;">Claims Help</a></li>
                         <li><a href="${getPath('contact-us.html')}" style="font-family: 'Outfit', sans-serif;">Ask Us Anything</a></li>
                         <li><a href="${getPath('contact-us.html')}" style="font-family: 'Outfit', sans-serif;">Advisor Resource Center</a></li>
-=======
-                        <li><a href="${getPath('about-us.html')}">About Us</a></li>
-                        <li><a href="${getPath('contact-us.html')}">Contact Us</a></li>
-                        <li><a href="${getPath('contact-us.html')}">Ask Us Anything</a></li>
-                        <li><a href="${getPath('contact-us.html')}">Advisor Resource Center</a></li>
->>>>>>> 69fc383078060a49b3bfa370f434dd3115446dd3
                     </ul>
                 </div>
 
@@ -210,13 +230,8 @@ function injectCookieBanner() {
         <h4 style="margin-bottom: 8px; color: rgba(181, 139, 66, 0.9); font-family: 'Playfair Display', Georgia, serif;"><i class="fas fa-cookie-bite" style="color: #b58b42;"></i> Cookie Consent</h4>
         <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 12px; font-family: 'Outfit', sans-serif;">We use cookies to improve your experience on our site. By using our site, you consent to cookies. Please read our Cookie Policy.</p>
         <div class="cookie-actions">
-<<<<<<< HEAD
             <button class="btn btn-outline btn-sm" id="cookie-settings-btn" onclick="alert('Cookie Settings details (Dummy).')" style="font-family: 'Outfit', sans-serif;">Preferences</button>
             <button class="btn btn-primary btn-sm" id="cookie-accept-btn" style="background: linear-gradient(145deg, #b58b42, #d4af37); border: none; color: #0a0a0f; font-weight: 700; font-family: 'Outfit', sans-serif;">Accept All</button>
-=======
-           
-            <button class="btn btn-primary btn-sm" id="cookie-accept-btn">Accept All</button>
->>>>>>> 69fc383078060a49b3bfa370f434dd3115446dd3
         </div>
     `;
 
@@ -294,7 +309,7 @@ function triggerEmailReflect(subject, bodyData) {
     }
     emailBody += "\nBest Regards,\nQuintera Support Team\n";
 
-    const mailtoUrl = `mailto:tulasilaxmi.mandala@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+    const mailtoUrl = `mailto:sales@quintera.us?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
 
     const mailLink = document.createElement("a");
     mailLink.href = mailtoUrl;

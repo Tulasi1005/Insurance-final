@@ -44,8 +44,11 @@
             align-items: center;
             justify-content: center;
             z-index: 1;
+            /* Added brightness filter to make images brighter */
+            filter: brightness(1.15) contrast(1.05);
         }
 
+        /* Removed dark overlay and using a much lighter one */
         .carousel-slide::before {
             content: '';
             position: absolute;
@@ -54,239 +57,15 @@
             width: 100%;
             height: 100%;
             inset: 0;
+            /* Very light overlay to keep images bright */
             background: linear-gradient(90deg,
-<<<<<<< HEAD
-                    rgba(11, 27, 43, 0.82) 0%,
-                    rgba(19, 40, 63, 0.65) 45%,
-                    rgba(11, 27, 43, 0.82) 100%);
-=======
-                    rgba(50, 63, 82, 0.82) 0%,
-                    rgba(67, 78, 94, 0.55) 45%,
-                    rgba(83, 99, 122, 0.35) 100%);
->>>>>>> 69fc383078060a49b3bfa370f434dd3115446dd3
+                    rgba(255, 255, 255, 0.08) 0%,
+                    rgba(255, 255, 255, 0.03) 45%,
+                    rgba(255, 255, 255, 0.08) 100%);
             z-index: 2;
         }
 
-        .carousel-slide.active {
-            opacity: 1;
-            visibility: visible;
-            z-index: 2;
-        }
-
-        .carousel-content {
-            position: relative;
-            z-index: 3;
-<<<<<<< HEAD
-            max-width: 800px;
-            padding: 45px 50px;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(11, 27, 43, 0.94) 0%, rgba(19, 40, 63, 0.88) 100%);
-            border: 2px solid var(--secondary-color);
-            border-radius: 12px;
-            box-shadow: var(--shadow-premium), 0 0 35px rgba(181, 139, 66, 0.25);
-=======
-            max-width: 850px;
-            padding: 0 40px;
-            text-align: center;
->>>>>>> 69fc383078060a49b3bfa370f434dd3115446dd3
-            transform: translateY(20px);
-            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
-            opacity: 0;
-        }
-
-        .carousel-slide.active .carousel-content {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-<<<<<<< HEAD
-        .logo-main {
-            font-family: 'Cinzel', serif;
-            font-size: 4.2rem;
-            font-weight: 700;
-            letter-spacing: 8px;
-            color: #dedfe4;
-            margin: 0;
-            line-height: 1.0;
-            text-transform: uppercase;
-        }
-
-        .logo-sub {
-            font-family: 'Cinzel', serif;
-            font-size: 2.0rem;
-            font-weight: 500;
-            letter-spacing: 12px;
-            color: var(--secondary-color);
-            margin-top: 10px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        .logo-divider {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            margin: 15px auto;
-            width: 100%;
-            max-width: 350px;
-        }
-
-        .logo-divider .divider-line {
-            flex: 1;
-            height: 1px;
-            background: var(--secondary-color);
-            opacity: 0.6;
-        }
-
-        .logo-divider svg {
-            display: block;
-        }
-
-        .logo-vision {
-            font-family: 'Cinzel', serif;
-            font-size: 1.15rem;
-            font-weight: 700;
-            letter-spacing: 5px;
-            color: var(--secondary-color);
-            margin-top: 15px;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-        }
-
-        .logo-vision .diamond {
-            color: var(--secondary-color);
-            font-size: 0.95rem;
-            margin: 0 10px;
-            vertical-align: middle;
-        }
-
-        .carousel-content p {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.15rem;
-            margin-bottom: 30px;
-            line-height: 1.6;
-            color: #E2E8F0;
-        }
-
-        /* Light Mode Overrides for Carousel */
-        body.light-mode .carousel-slide::before {
-            background: linear-gradient(135deg,
-                    rgba(255, 255, 255, 0.65) 0%,
-                    rgba(255, 255, 255, 0.45) 100%);
-        }
-
-        body.light-mode .carousel-content {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(240, 244, 248, 0.92) 100%);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 0 0 25px rgba(181, 139, 66, 0.15);
-        }
-
-        body.light-mode .logo-main {
-            color: #0B1B2B; /* Navy from logo */
-            text-shadow: none;
-        }
-
-        body.light-mode .logo-vision {
-            color: #0B1B2B; /* Navy from logo */
-        }
-
-        body.light-mode .carousel-content p {
-            color: #2D3138; /* Charcoal for readability */
-=======
-        .carousel-content h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--secondary-color);
-            margin-bottom: 8px;
-            font-family: 'Outfit', sans-serif;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-        }
-
-        .carousel-content h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: white;
-            margin-bottom: 20px;
-            font-family: 'Outfit', sans-serif;
-        }
-
-        .carousel-content p {
-            font-size: 1.25rem;
-            margin-bottom: 30px;
-            line-height: 1.6;
-            opacity: 0.9;
-            color: white;
->>>>>>> 69fc383078060a49b3bfa370f434dd3115446dd3
-        }
-
-        /* Nav Controls */
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: rgba(19, 40, 63, 0.5);
-            border: 1px solid var(--border-color);
-            color: #fff;
-            font-size: 1.25rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: var(--transition);
-            z-index: 10;
-            outline: none;
-        }
-
-        .carousel-btn:hover {
-            background-color: var(--secondary-color);
-            color: var(--primary-color);
-            border-color: var(--secondary-color);
-        }
-
-        .carousel-btn.prev {
-            left: 24px;
-        }
-
-        .carousel-btn.next {
-            right: 24px;
-        }
-
-        /* Dot Indicators */
-        .carousel-dots {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 12px;
-            z-index: 10;
-        }
-
-        .carousel-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-<<<<<<< HEAD
-            background-color: rgba(255, 255, 255, 0.4);
-=======
-            background-color: rgba(255, 255, 255, 0.3);
->>>>>>> 69fc383078060a49b3bfa370f434dd3115446dd3
-            cursor: pointer;
-            transition: var(--transition);
-            border: 1px solid transparent;
-        }
-
-        .carousel-dot.active {
-            background-color: var(--secondary-color);
-            transform: scale(1.2);
-            border-color: var(--secondary-color);
-        }
-
-        /* Announcement Alert Bar */
+        /* Announcement Alert Bar Formatting */
         .announcement-bar {
             background-color: var(--secondary-color);
             color: var(--primary-color);
@@ -298,93 +77,590 @@
             letter-spacing: 1px;
             text-transform: uppercase;
             border-bottom: 2px solid var(--secondary-color);
+            position: relative;
+            z-index: 100;
         }
 
         .announcement-bar a {
             color: var(--primary-color);
+            text-decoration: none;
             display: inline-flex;
             align-items: center;
             gap: 8px;
+            transition: opacity 0.3s ease;
         }
 
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .carousel-wrapper {
-<<<<<<< HEAD
-                height: auto;
-                min-height: 520px;
-                display: flex;
+        .announcement-bar a:hover {
+            opacity: 0.85;
+        }
+
+        /* Upgraded Split Hero Section Styling */
+        .hero-split-section {
+            background-color: #070C14; /* Deep dark slate base */
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+            /* border-bottom: 4px solid var(--secondary-color); */
+            min-height: 620px;
+        }
+
+        /* Smoky glowing bubbles */
+        .smoky-bg-glow {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(95px);
+            -webkit-filter: blur(95px);
+            opacity: 0.38;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Gold-orange smoky glow (top right) */
+        .glow-1 {
+            top: -15%;
+            right: 5%;
+            width: 480px;
+            height: 480px;
+            background: radial-gradient(circle, rgba(181, 139, 66, 0.28) 0%, rgba(181, 139, 66, 0.03) 70%, transparent 100%);
+            animation: driftGlow1 22s ease-in-out infinite alternate;
+        }
+
+        /* Navy/Indigo smoky glow (bottom center) */
+        .glow-2 {
+            bottom: -20%;
+            left: 20%;
+            width: 520px;
+            height: 520px;
+            background: radial-gradient(circle, rgba(28, 77, 126, 0.55) 0%, rgba(28, 77, 126, 0.05) 75%, transparent 100%);
+            animation: driftGlow2 28s ease-in-out infinite alternate;
+        }
+
+        /* Dark Slate/Purple smoky glow (top left) */
+        .glow-3 {
+            top: 5%;
+            left: -15%;
+            width: 380px;
+            height: 380px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.25) 0%, rgba(99, 102, 241, 0.02) 70%, transparent 100%);
+            animation: driftGlow3 20s ease-in-out infinite alternate;
+        }
+
+        /* Premium Dot Matrix Overlay for texture/sharpness */
+        .smoky-bg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.02) 1.5px, transparent 1.5px);
+            background-size: 32px 32px;
+            z-index: 2;
+            pointer-events: none;
+            opacity: 0.8;
+        }
+
+        /* Slow organic drift animations for the smoke shapes */
+        @keyframes driftGlow1 {
+            0% { transform: translate(0px, 0px) scale(1); }
+            50% { transform: translate(35px, -25px) scale(1.08); }
+            100% { transform: translate(-15px, 20px) scale(0.92); }
+        }
+
+        @keyframes driftGlow2 {
+            0% { transform: translate(0px, 0px) scale(1); }
+            50% { transform: translate(-45px, 35px) scale(0.95); }
+            100% { transform: translate(30px, -20px) scale(1.05); }
+        }
+
+        @keyframes driftGlow3 {
+            0% { transform: translate(0px, 0px) scale(1); }
+            50% { transform: translate(25px, 45px) scale(1.06); }
+            100% { transform: translate(-25px, -30px) scale(0.92); }
+        }
+
+        .hero-split-grid {
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 0;
+            align-items: stretch;
+            position: relative;
+            z-index: 2;
+            padding: 0;
+        }
+
+        .hero-left-col {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 80px 80px 80px 10%;
+            min-height: 620px;
+        }
+
+        .hero-brand-lockup {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .hero-brand-wordmark {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 1.6rem;
+            letter-spacing: 2px;
+            color: #FFFFFF; /* White */
+            line-height: 0.95;
+            margin: 0;
+        }
+
+        .hero-brand-submark {
+            font-family: 'Cinzel', serif;
+            font-weight: 500;
+            font-size: 0.76rem;
+            letter-spacing: 5px;
+            color: var(--secondary-color); /* Gold */
+            line-height: 1.1;
+            margin-top: 4px;
+            margin-left: 1.35rem; /* Align H under U */
+        }
+
+        .hero-brand-divider {
+            height: 1px;
+            background: linear-gradient(90deg, var(--secondary-color), transparent);
+            width: 65px;
+            margin: 4px 0;
+            margin-left: 1.35rem;
+            opacity: 0.7;
+        }
+
+        .hero-brand-tagline {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 0.48rem;
+            letter-spacing: 1.8px;
+            color: var(--secondary-color);
+            opacity: 0.9;
+            text-transform: uppercase;
+            margin-left: 1.35rem;
+        }
+
+        .hero-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.9rem;
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 50%, #94A3B8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-tagline-sub {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 3.5px;
+            color: #E2E8F0;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero-tagline-sub .gold-diamond {
+            color: var(--secondary-color);
+            margin: 0 6px;
+        }
+
+        .hero-description {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.35rem;
+            line-height: 1.65;
+            color: #ffffff; /* Slate gray */
+            margin-bottom: 30px;
+            max-width: 580px;
+            font-weight: 400;
+        }
+
+        /* Glassmorphic Grid of Feature Cards */
+        .hero-features-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            width: 100%;
+            margin: 10px 0 20px 0;
+            list-style: none;
+            padding: 0;
+        }
+
+        .hero-feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 22px 15px;
+            border-radius: 12px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .hero-feature-card:hover {
+            transform: translateY(-6px) scale(1.02);
+            border-color: rgba(181, 139, 66, 0.6);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 20px rgba(181, 139, 66, 0.2);
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .hero-feature-card i {
+            font-size: 1.7rem;
+            color: var(--secondary-color);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .hero-feature-card:hover i {
+            transform: scale(1.15) translateY(-2px);
+        }
+
+        .hero-feature-card span {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: #E2E8F0;
+            letter-spacing: 0.5px;
+            line-height: 1.25;
+        }
+
+        /* Action Premium Gold Button with Shimmer Sweep */
+        .btn-hero-quote {
+            background: var(--grad-gold);
+            color: #0B1B2B;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 16px 36px;
+            border-radius: 30px; /* Pill-shaped */
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(181, 139, 66, 0.3);
+            border: 1px solid rgba(181, 139, 66, 0.5);
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-hero-quote::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+            transform: skewX(-25deg);
+            transition: none;
+        }
+
+        .btn-hero-quote:hover::before {
+            animation: shimmershine 0.85s ease-in-out;
+        }
+
+        @keyframes shimmershine {
+            100% { left: 150%; }
+        }
+
+        .btn-hero-quote:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(181, 139, 66, 0.5);
+            background: #FFFFFF;
+            color: #0B1B2B;
+            border-color: #FFFFFF;
+        }
+
+        .btn-hero-quote i {
+            transition: transform 0.3s ease;
+        }
+
+        .btn-hero-quote:hover i {
+            transform: translateX(4px);
+        }
+
+        /* Action Buttons Row */
+        .hero-actions-row {
+            display: flex;
+            gap: 18px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        /* Secondary Explore Outline Button */
+        .btn-hero-explore {
+            background: transparent;
+            color: #FFFFFF;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 15px 35px;
+            border-radius: 30px; /* Pill-shaped */
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            text-decoration: none;
+        }
+
+        .btn-hero-explore:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: #FFFFFF;
+            color: #FFFFFF;
+            transform: translateY(-2px);
+        }
+
+        /* Right Column Media Elements */
+        .hero-right-col {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            min-height: 620px;
+            padding: 0;
+            margin: 0;
+            position: relative;
+        }
+
+        .hero-image-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            min-height: 620px;
+            max-width: 100%;
+        }
+
+        .hero-carousel-container {
+            width: 100%;
+            height: 100%;
+            min-height: 620px;
+            border-radius: 0; /* Edge to edge */
+            border: none;
+            overflow: hidden;
+            position: relative;
+            box-shadow: none;
+            background-color: #0B1B2B;
+        }
+
+        .hero-carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+            z-index: 1;
+        }
+
+        .hero-carousel-slide.active {
+            opacity: 1;
+            z-index: 2;
+        }
+
+        /* Glassmorphic Carousel Buttons */
+        .hero-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(11, 27, 43, 0.75);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border: 1px solid rgba(181, 139, 66, 0.4);
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .hero-nav-btn:hover {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 12px rgba(181, 139, 66, 0.5);
+        }
+
+        .prev-btn { left: 16px; }
+        .next-btn { right: 16px; }
+
+        /* Indicators */
+        .hero-carousel-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .hero-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .hero-dot.active {
+            background: var(--secondary-color);
+            transform: scale(1.25);
+            border-color: var(--secondary-color);
+        }
+
+
+
+        /* Light Mode Overrides for Split Hero */
+        body.light-mode .hero-split-section {
+            background-color: #F8FAFC;
+        }
+
+        body.light-mode .glow-1 {
+            background: radial-gradient(circle, rgba(181, 139, 66, 0.12) 0%, transparent 100%);
+        }
+
+        body.light-mode .glow-2 {
+            background: radial-gradient(circle, rgba(203, 213, 225, 0.65) 0%, transparent 100%);
+        }
+
+        body.light-mode .glow-3 {
+            background: radial-gradient(circle, rgba(224, 231, 255, 0.5) 0%, transparent 100%);
+        }
+
+        body.light-mode .smoky-bg-overlay {
+            background-image: radial-gradient(rgba(11, 27, 43, 0.02) 1.5px, transparent 1.5px);
+            opacity: 0.6;
+        }
+
+        body.light-mode .hero-brand-wordmark {
+            color: #0B1B2B; /* Navy */
+        }
+
+        body.light-mode .hero-title {
+            background: none;
+            -webkit-background-clip: initial;
+            -webkit-text-fill-color: initial;
+            color: #0B1B2B; /* Navy */
+        }
+
+        body.light-mode .hero-tagline-sub {
+            color: #0B1B2B; /* Navy */
+        }
+
+        body.light-mode .hero-description {
+            color: #475569; /* Slate gray */
+        }
+
+        body.light-mode .hero-feature-card {
+            background: rgba(11, 27, 43, 0.02);
+            border: 1px solid rgba(11, 27, 43, 0.06);
+        }
+
+        body.light-mode .hero-feature-card:hover {
+            background: rgba(11, 27, 43, 0.04);
+            border-color: rgba(181, 139, 66, 0.5);
+            box-shadow: 0 10px 25px rgba(11, 27, 43, 0.08), 0 0 15px rgba(181, 139, 66, 0.15);
+        }
+
+        body.light-mode .hero-feature-card span {
+            color: #334155;
+        }
+
+        body.light-mode .btn-hero-explore {
+            color: #0B1B2B; /* Navy */
+            border-color: rgba(11, 27, 43, 0.25);
+        }
+
+        body.light-mode .btn-hero-explore:hover {
+            background: rgba(11, 27, 43, 0.05);
+            border-color: #0B1B2B;
+            color: #0B1B2B;
+        }
+
+
+
+        /* Mobile responsive adjustments */
+        @media (max-width: 992px) {
+            .hero-split-section {
+                padding: 60px 0;
+            }
+
+            .hero-split-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                text-align: center;
+            }
+
+            .hero-left-col {
                 align-items: center;
             }
 
-            .carousel-content {
-                padding: 30px 20px !important;
-                margin: 15px !important;
-                max-width: calc(100% - 30px) !important;
-                border: 2px solid var(--secondary-color) !important;
-                background: linear-gradient(135deg, rgba(11, 27, 43, 0.96) 0%, rgba(19, 40, 63, 0.92) 100%) !important;
+            .hero-brand-lockup {
+                align-items: center;
             }
 
-            .logo-main {
-=======
-                height: 450px;
+            .hero-brand-submark,
+            .hero-brand-divider,
+            .hero-brand-tagline {
+                margin-left: 0;
             }
 
-            .carousel-content h1 {
->>>>>>> 69fc383078060a49b3bfa370f434dd3115446dd3
-                font-size: 2.2rem !important;
-                letter-spacing: 4px !important;
+            .hero-title {
+                font-size: 2.3rem;
             }
 
-            .logo-sub {
-                font-size: 1.1rem !important;
-                letter-spacing: 6px !important;
-                margin-top: 6px !important;
-                margin-bottom: 12px !important;
+            .hero-features-list {
+                grid-template-columns: 1fr;
+                gap: 12px;
+                max-width: 320px;
+                margin: 10px auto 25px;
             }
 
-<<<<<<< HEAD
-            .logo-divider {
-                max-width: 220px !important;
-                margin: 10px auto !important;
+            .hero-feature-card {
+                flex-direction: row;
+                text-align: left;
+                padding: 14px 20px;
+                gap: 15px;
             }
 
-            .logo-vision {
-                font-size: 0.75rem !important;
-                letter-spacing: 2px !important;
-                margin-top: 10px !important;
-                margin-bottom: 15px !important;
+            .hero-feature-card i {
+                font-size: 1.3rem;
             }
 
-            .logo-vision .diamond {
-                margin: 0 4px !important;
-                font-size: 0.7rem !important;
+            .hero-carousel-container {
+                height: 300px;
             }
 
-            .carousel-content p {
-                font-size: 0.9rem !important;
-                margin-bottom: 20px !important;
-            }
 
-            body.light-mode .carousel-content {
-                background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(240, 244, 248, 0.94) 100%) !important;
-            }
-
-=======
-            .carousel-content h2 {
-                font-size: 1rem !important;
-                letter-spacing: 2px !important;
-            }
-
-            .carousel-content p {
-                font-size: 0.95rem !important;
-                margin-bottom: 20px !important;
-            }
-
->>>>>>> 69fc383078060a49b3bfa370f434dd3115446dd3
-            .carousel-btn {
-                display: none;
-            }
         }
 
         /* Specific Roadside Assistance Box formatting */
@@ -449,38 +725,61 @@
             letter-spacing: 0.5px;
         }
 
-<<<<<<< HEAD
+        .split-left .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        } 
 
-=======
-        .logo-main{
-    font-family:'Cinzel',serif;
-    font-size:4.8rem;
-    font-weight:600;
-    letter-spacing:10px;
-    color:#B6B2B5 !important;
-    text-transform:uppercase;
+        .split-left .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .split-left .btn-primary {
+            background: #d4af37;
+            color: #0B1B2B;
+            padding: 14px 38px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: 0.25s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+        }
+        .split-left .btn-primary:hover {
+            background: #e8c84a;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.45);
+        }
+        .split-left .btn-outline {
+            background: transparent;
+            color: #fff;
+            padding: 14px 38px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 1.5px solid rgba(255,255,255,0.25);
+            transition: 0.25s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .split-left .btn-outline:hover {
+            border-color: #d4af37;
+            color: #d4af37;
+        }
 
-    text-shadow:
-        0 2px 4px rgba(0,0,0,.6),
-        0 8px 20px rgba(0,0,0,.45);
-
-    margin:0;
-}
-
-.logo-sub{
-    font-family:'Cinzel',serif;
-    font-size:2.4rem;
-    font-weight:500;
-    letter-spacing:16px;
-    color:#C79A3A !important;
-
-    text-shadow:
-        0 2px 4px rgba(0,0,0,.6),
-        0 8px 20px rgba(0,0,0,.45);
-
-    margin-top:15px;
-}
->>>>>>> 69fc383078060a49b3bfa370f434dd3115446dd3
+        /* RIGHT SIDE: carousel (background only) */
+        .split-right {
+            flex: 1 1 55%;
+            position: relative;
+            min-height: 500px;
+            background: #0B1B2B;
+            overflow: hidden;
+        }
     </style>
 </head>
 
@@ -490,124 +789,77 @@
     <div id="header-placeholder"></div>
 
     <!-- Announcement Alert Bar -->
-    <div class="announcement-bar">
-        <a href="./contact-us.html"><i class="fas fa-bullhorn"></i> Click For Quote!</a>
-    </div>
+    <!-- <div class="announcement-bar">
+        <a href="./contact-us.html"><i class="fas fa-shield-alt"></i> Get Immediate Coverage Today — Speak With Our Quintera Advisory Desk</a>
+    </div> -->
 
-    <!-- Hero / Premium Carousel Section -->
-    <div class="carousel-wrapper">
-        <!-- Slide 1 -->
-        <div class="carousel-slide active"
-            style="background-image: url('https://images.unsplash.com/photo-1510519138101-570d1dca3d66?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZGFyayUyMGxhcHRvcHxlbnwwfHwwfHx8MA%3D%3D');">
-            <div class="carousel-content">
-<<<<<<< HEAD
-                <h1 class="logo-main">QUINTERA</h1>
-                <h1 class="logo-sub">HOLDINGS</h1>
-                <div class="logo-divider">
-                    <div class="divider-line"></div>
-                    <svg class="divider-scroll" width="40" height="15" viewBox="0 0 40 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20 2 C17.5 2, 16 4, 16 6 C16 9, 18.5 11, 20 11 C21.5 11, 24 9, 24 6 C24 4, 22.5 2, 20 2 Z" stroke="#B58B42" stroke-width="1.2" fill="none"/>
-                        <path d="M15 6 C12 6, 9 3, 6 6 C3 9, 0 6, 0 6" stroke="#B58B42" stroke-width="1.2" fill="none"/>
-                        <path d="M25 6 C28 6, 31 3, 34 6 C37 9, 40 6, 40 6" stroke="#B58B42" stroke-width="1.2" fill="none"/>
-                        <circle cx="20" cy="6" r="1.8" fill="#B58B42"/>
-                    </svg>
-                    <div class="divider-line"></div>
+    <!-- Hero Split Layout Section -->
+    <section class="hero-split-section">
+        <!-- Smoky Blurry Background Elements -->
+        <div class="smoky-bg-glow glow-1"></div>
+        <div class="smoky-bg-glow glow-2"></div>
+        <div class="smoky-bg-glow glow-3"></div>
+        <div class="smoky-bg-overlay"></div>
+
+        <div class="container-fluid hero-split-grid">
+            <!-- Left Side -->
+            <div class="hero-left-col">
+             
+                
+                <h1 class="hero-title">Professional Insurance &amp;<br>Risk Management Solutions</h1>
+                
+                <!-- Tagline Sub-Headline -->
+                <div class="hero-tagline-sub">VISION <span class="gold-diamond">⬥</span> INTEGRITY <span class="gold-diamond">⬥</span> IMPACT</div>
+                
+                <!-- Description Paragraph -->
+                <p class="hero-description">Premium insurance, commercial risk coverage, and real estate advisory built for high-value families, entrepreneurs and enterprises.</p>
+                
+                <!-- Glassmorphic Service Grid -->
+                <!-- <ul class="hero-features-list">
+                    <li class="hero-feature-card" onclick="window.location.href='./services.html?filter=insurance'">
+                        <i class="fas fa-user-shield"></i>
+                        <span>Personal Insurance</span>
+                    </li>
+                    <li class="hero-feature-card" onclick="window.location.href='./services.html?filter=insurance'">
+                        <i class="fas fa-building-shield"></i>
+                        <span>Commercial Insurance</span>
+                    </li>
+                    <li class="hero-feature-card" onclick="window.location.href='./services.html?filter=realestate'">
+                        <i class="fas fa-key"></i>
+                        <span>Real Estate Advisory</span>
+                    </li>
+                </ul> -->
+                
+                <div class="hero-actions-row">
+                    <a href="./contact-us.html" class="btn-hero-quote">Get Started <i class="fas fa-arrow-right"></i></a>
+                    <a href="./services.html" class="btn-hero-explore">Explore Services</a>
                 </div>
-                <h2 class="logo-vision">VISION <span class="diamond">⬥</span> INTEGRITY <span class="diamond">⬥</span> IMPACT</h2>
-                <p>Providing professional insurance coverage, policy management, risk assessment, and
-                    commercial/residential real estate advisory services tailored to your needs.</p>
-                <a href="./contact-us.html" class="btn btn-secondary"
-=======
-                <h2 style="color: rgb(236, 236, 236);">Vision • Integrity • Impact</h2>
-                <h1 class="logo-main">QUINTERA</h1>
-                <h1 class="logo-sub">HOLDINGS</h1>
-                <p>Providing professional insurance coverage, policy management, risk assessment, and
-                    commercial/residential real estate advisory services tailored to your needs.</p>
-                <a href="./contact-us.html" class="btn btn-primary"
->>>>>>> 69fc383078060a49b3bfa370f434dd3115446dd3
-                    style="padding: 14px 40px; font-weight: 700; margin-top: 10px;">Request Advisor Consultation</a>
+            </div>
+            
+            <!-- Right Side -->
+            <div class="hero-right-col">
+                <div class="hero-carousel-container">
+                    <!-- Slide 1 -->
+                    <div class="hero-carousel-slide active" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlhqCsfJ5OFnHNDaMSwXzUW_KH4G-Xv92v0SdoiQMc3g&s=10');"></div>
+                    <!-- Slide 2 -->
+                    <div class="hero-carousel-slide" style="background-image: url('https://www.insurtechexpress.com/wp-content/uploads/2023/11/iStock-1153620019-scaled-1.jpg');"></div>
+                    <!-- Slide 3 -->
+                    <div class="hero-carousel-slide" style="background-image: url('https://programbusiness.com/wp-content/uploads/2018/10/personal_insurance-1.jpg');"></div>
+
+                    <!-- Navigation Buttons -->
+                    <button class="hero-nav-btn prev-btn" onclick="prevHeroSlide()"><i class="fas fa-chevron-left"></i></button>
+                    <button class="hero-nav-btn next-btn" onclick="nextHeroSlide()"><i class="fas fa-chevron-right"></i></button>
+
+                    <!-- Dot Indicators -->
+                    <div class="hero-carousel-dots">
+                        <span class="hero-dot active" onclick="setHeroSlide(0)"></span>
+                        <span class="hero-dot" onclick="setHeroSlide(1)"></span>
+                        <span class="hero-dot" onclick="setHeroSlide(2)"></span>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <!-- Slide 2 -->
-        <div class="carousel-slide"
-<<<<<<< HEAD
-            style="background-image: url('https://images.openai.com/static-rsc-4/oy6pftXKvaSN0YZ1P9JwRE22pBYreRL2wLbDVxHXeNzsMxLrdSJRC18cdTVmJCcpX9rVzR6bNClevHNEJ9ExQ__XLA3K9mEloeU9PoYc_-nCnGvc2MALu0rmiDYwuxTIdrQJlDKXO8bSieYp-BisHrmtgGcA04Uxxtf75HNDJG5C7XDq1E9Kp-Cw65JLet8-?purpose=inline');">
-            <div class="carousel-content">
-                <h1 class="logo-main">QUINTERA</h1>
-                <h1 class="logo-sub">HOLDINGS</h1>
-                <div class="logo-divider">
-                    <div class="divider-line"></div>
-                    <svg class="divider-scroll" width="40" height="15" viewBox="0 0 40 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20 2 C17.5 2, 16 4, 16 6 C16 9, 18.5 11, 20 11 C21.5 11, 24 9, 24 6 C24 4, 22.5 2, 20 2 Z" stroke="#B58B42" stroke-width="1.2" fill="none"/>
-                        <path d="M15 6 C12 6, 9 3, 6 6 C3 9, 0 6, 0 6" stroke="#B58B42" stroke-width="1.2" fill="none"/>
-                        <path d="M25 6 C28 6, 31 3, 34 6 C37 9, 40 6, 40 6" stroke="#B58B42" stroke-width="1.2" fill="none"/>
-                        <circle cx="20" cy="6" r="1.8" fill="#B58B42"/>
-                    </svg>
-                    <div class="divider-line"></div>
-                </div>
-                <h2 class="logo-vision">VISION <span class="diamond">⬥</span> INTEGRITY <span class="diamond">⬥</span> IMPACT</h2>
-                <p>Providing professional insurance coverage, policy management, risk assessment, and
-                    commercial/residential real estate advisory services tailored to your needs.</p>
-                <a href="./contact-us.html" class="btn btn-secondary"
-=======
-            style="background-image: url('https://img.magnific.com/premium-photo/dark-room-with-chair-table_506134-29910.jpg?semt=ais_hybrid&w=740&q=80');">
-            <div class="carousel-content">
-                <h2 style="color: rgb(236, 236, 236);">Vision • Integrity • Impact</h2>
-                <h1 class="logo-main">QUINTERA</h1>
-                <h1 class="logo-sub">HOLDINGS</h1>
-                <p>Providing professional insurance coverage, policy management, risk assessment, and
-                    commercial/residential real estate advisory services tailored to your needs.</p>
-                <a href="./contact-us.html" class="btn btn-primary"
->>>>>>> 69fc383078060a49b3bfa370f434dd3115446dd3
-                    style="padding: 14px 40px; font-weight: 700; margin-top: 10px;">Request Advisor Consultation</a>
-            </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="carousel-slide"
-            style="background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20230624/pngtree-visualizing-the-journey-to-owning-a-home-3d-render-illustration-of-image_3675482.jpg');">
-            <div class="carousel-content">
-<<<<<<< HEAD
-                <h1 class="logo-main">QUINTERA</h1>
-                <h1 class="logo-sub">HOLDINGS</h1>
-                <div class="logo-divider">
-                    <div class="divider-line"></div>
-                    <svg class="divider-scroll" width="40" height="15" viewBox="0 0 40 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20 2 C17.5 2, 16 4, 16 6 C16 9, 18.5 11, 20 11 C21.5 11, 24 9, 24 6 C24 4, 22.5 2, 20 2 Z" stroke="#B58B42" stroke-width="1.2" fill="none"/>
-                        <path d="M15 6 C12 6, 9 3, 6 6 C3 9, 0 6, 0 6" stroke="#B58B42" stroke-width="1.2" fill="none"/>
-                        <path d="M25 6 C28 6, 31 3, 34 6 C37 9, 40 6, 40 6" stroke="#B58B42" stroke-width="1.2" fill="none"/>
-                        <circle cx="20" cy="6" r="1.8" fill="#B58B42"/>
-                    </svg>
-                    <div class="divider-line"></div>
-                </div>
-                <h2 class="logo-vision">VISION <span class="diamond">⬥</span> INTEGRITY <span class="diamond">⬥</span> IMPACT</h2>
-                <p>Providing professional insurance coverage, policy management, risk assessment, and
-                    commercial/residential real estate advisory services tailored to your needs.</p>
-                <a href="./contact-us.html" class="btn btn-secondary"
-=======
-                <h2 style="color: rgb(236, 236, 236);">Vision • Integrity • Impact</h2>
-                <h1 class="logo-main">QUINTERA</h1>
-                <h1 class="logo-sub">HOLDINGS</h1>
-                <p>Providing professional insurance coverage, policy management, risk assessment, and
-                    commercial/residential real estate advisory services tailored to your needs.</p>
-                <a href="./contact-us.html" class="btn btn-primary"
->>>>>>> 69fc383078060a49b3bfa370f434dd3115446dd3
-                    style="padding: 14px 40px; font-weight: 700; margin-top: 10px;">Request Advisor Consultation</a>
-            </div>
-        </div>
-
-        <!-- Nav Buttons -->
-        <button class="carousel-btn prev" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></button>
-        <button class="carousel-btn next" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></button>
-
-        <!-- Dot Indicators -->
-        <div class="carousel-dots">
-            <div class="carousel-dot active"></div>
-            <div class="carousel-dot"></div>
-            <div class="carousel-dot"></div>
-        </div>
-    </div>
+    </section>
 
     <!-- Specific Corporate Contact Banner -->
     <section class="roadside-assistance-box">
@@ -620,7 +872,7 @@
                 <a href="tel:980-776-5292" class="roadside-btn-red">
                     <i class="fas fa-phone-alt"></i> CALL 980-776-5292
                 </a>
-                <a href="mailto:tulasilaxmi.mandala@gmail.com" class="roadside-btn-red">
+                <a href="mailto:sales@quintera.us" class="roadside-btn-red">
                     <i class="fas fa-envelope"></i> EMAIL ADVISOR
                 </a>
             </div>
@@ -741,12 +993,8 @@
                 <div class="upgrade-content-col">
                     <h2>Upgrade your insurance advisory experience with Quintera</h2>
                     <p class="upgrade-quote">
-<<<<<<< HEAD
                         "At Quintera, our values as a team are aligned to making you, our valued clients, not only happy
                         but have an amazing advisory experience." - Quintera
-=======
-                        "At Quintera, our values as a team are aligned to making you, our valued clients, not only happy but have an amazing advisory experience." - Quintera
->>>>>>> 69fc383078060a49b3bfa370f434dd3115446dd3
                     </p>
                 </div>
             </div>
@@ -761,51 +1009,49 @@
 
     <!-- Layout Handler Script -->
     <script src="./layout.js"></script>
+    <!-- Right-Side Hero Carousel Script -->
     <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll(".carousel-slide");
-        const dots = document.querySelectorAll(".carousel-dot");
-        let slideInterval;
+        let heroCurrentSlide = 0;
+        const heroSlides = document.querySelectorAll(".hero-carousel-slide");
+        const heroDots = document.querySelectorAll(".hero-dot");
+        let heroInterval;
 
-        function showSlide(index) {
-            if (index >= slides.length) currentSlide = 0;
-            else if (index < 0) currentSlide = slides.length - 1;
-            else currentSlide = index;
+        function showHeroSlide(index) {
+            if (index >= heroSlides.length) heroCurrentSlide = 0;
+            else if (index < 0) heroCurrentSlide = heroSlides.length - 1;
+            else heroCurrentSlide = index;
 
-            slides.forEach((slide, i) => {
-                if (i === currentSlide) {
+            heroSlides.forEach((slide, i) => {
+                if (i === heroCurrentSlide) {
                     slide.classList.add("active");
-                    dots[i].classList.add("active");
+                    heroDots[i].classList.add("active");
                 } else {
                     slide.classList.remove("active");
-                    dots[i].classList.remove("active");
+                    heroDots[i].classList.remove("active");
                 }
             });
         }
 
-        function nextSlide() {
-            showSlide(currentSlide + 1);
+        function nextHeroSlide() {
+            showHeroSlide(heroCurrentSlide + 1);
         }
 
-        function prevSlide() {
-            showSlide(currentSlide - 1);
+        function prevHeroSlide() {
+            showHeroSlide(heroCurrentSlide - 1);
         }
 
-        function resetInterval() {
-            clearInterval(slideInterval);
-            slideInterval = setInterval(nextSlide, 5000);
+        function setHeroSlide(index) {
+            showHeroSlide(index);
+            resetHeroInterval();
         }
 
-        // Bind events to dots
-        dots.forEach((dot, index) => {
-            dot.addEventListener("click", () => {
-                showSlide(index);
-                resetInterval();
-            });
-        });
+        function resetHeroInterval() {
+            clearInterval(heroInterval);
+            heroInterval = setInterval(nextHeroSlide, 5000);
+        }
 
         // Start autoplay
-        slideInterval = setInterval(nextSlide, 5000);
+        heroInterval = setInterval(nextHeroSlide, 5000);
     </script>
 </body>
 
